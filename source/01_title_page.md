@@ -16,12 +16,12 @@ ammended for UNSW by Mathew Lipson, 2018
         \vspace*{1.5cm}
         
         \huge
-        This is the title of the thesis
+        Instrumentals
         
         \vspace{2.5cm}
         
         \Large
-        Firstname Surname
+        Emre Hakguder
 
         \vspace{4.5cm}
 

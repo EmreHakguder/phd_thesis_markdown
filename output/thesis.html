@@ -8,28 +8,27 @@
                         <title>01_title_page</title>
         <style type="text/css">code{white-space: pre;}</style>
                             <style type="text/css">
-            a.sourceLine { display: inline-block; line-height: 1.25; }
-            a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-            a.sourceLine:empty { height: 1.2em; position: absolute; }
-            .sourceCode { overflow: visible; }
-            code.sourceCode { white-space: pre; position: relative; }
+            pre > code.sourceCode { white-space: pre; position: relative; }
+            pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+            pre > code.sourceCode > span:empty { height: 1.2em; }
+            code.sourceCode > span { color: inherit; text-decoration: inherit; }
             div.sourceCode { margin: 1em 0; }
             pre.sourceCode { margin: 0; }
             @media screen {
             div.sourceCode { overflow: auto; }
             }
             @media print {
-            code.sourceCode { white-space: pre-wrap; }
-            a.sourceLine { text-indent: -1em; padding-left: 1em; }
+            pre > code.sourceCode { white-space: pre-wrap; }
+            pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
             }
-            pre.numberSource a.sourceLine
-              { position: relative; }
-            pre.numberSource a.sourceLine:empty
-              { position: absolute; }
-            pre.numberSource a.sourceLine::before
-              { content: attr(data-line-number);
-                position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-                border: none; pointer-events: all;
+            pre.numberSource code
+              { counter-reset: source-line 0; }
+            pre.numberSource code > span
+              { position: relative; left: -4em; counter-increment: source-line; }
+            pre.numberSource code > span > a:first-child::before
+              { content: counter(source-line);
+                position: relative; left: -1em; text-align: right; vertical-align: baseline;
+                border: none; display: inline-block;
                 -webkit-touch-callout: none; -webkit-user-select: none;
                 -khtml-user-select: none; -moz-user-select: none;
                 -ms-user-select: none; user-select: none;
@@ -38,9 +37,9 @@
               }
             pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
             div.sourceCode
-              {  }
+              {   }
             @media screen {
-            a.sourceLine::before { text-decoration: underline; }
+            pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
             }
             code span.al { color: #ff0000; font-weight: bold; } /* Alert */
             code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -72,140 +71,140 @@
             code span.vs { color: #4070a0; } /* VerbatimString */
             code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
             </style>
-                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+                                    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
                             <style>
-            body {
-                font-family: Georgia;
-                max-width: 800px;
-                margin: 0 auto;
-                line-height: 30px;
-                font-size: 18px;
-                padding-left: 350px;
-                padding-right: 50px;
-                color: #111;
-            }
-            
-            h1, h2, h3, h4, h5, h6 {
-                font-family: Arial;
-            }
-            
-            h1 {
-                padding-top: 200px;
-                line-height: 50px;
-            }
-            h2 {
-                padding-top: 30px;
-            }
-            h3 {
-                padding-top: 20px;
-            }
-            h4 {
-                padding-top: 10px;
-            }
-            p {
-                text-align: justify;
-            }
-            p a {
-                word-wrap: break-word;
-                white-space: pre;
-            }
-            code {
-                word-wrap: break-word;
-            }
-            blockquote {
-                border-left: 3px solid #eee;
-                margin-left: 20px;
-                padding-left: 20px;
-            }
-            
-            ::selection {
-                background-color: #E4E4E4;
-            }
-            
-            table {
-                width: 100%;
-            }
-            table caption {
-                font-weight: bold;
-            }
-            table tr {
-                padding: 0;
-                margin: 0;
-                background-color: #f0f0f0;
-            }
-            table tr.even {
-                background-color: #fafafa;
-            }
-            table td {
-                margin: 0;
-                padding: 3px 5px;
-            }
-            
-            p span.added {
-                color: green;
-                background-color: #FFF3C5;
-            }
-            p span.removed {
-                color: red;
-                background-color: #FFF3C5;
-            }
-            
-            #title-page {
-                padding: 80px 0;
-            }
-            
-            #TOC {
-                position: fixed;
-                left: 0;
-                top: 0;
-                overflow-y: scroll;
-                height: 100%;
-                background: #fafafa;
-                max-width: 300px;
-                font-family: Arial;
-                font-size: 15px;
-                line-height: 30px;
-            }
-            ::-webkit-scrollbar {
-                width: 8px;
-            }
-            ::-webkit-scrollbar-track {
-                background-color: #ECECEC;
-            }
-            ::-webkit-scrollbar-thumb {
-                background-color: #B0B0B0;
-                border-radius: 8px;
-            }
-            #TOC > ul {
-                padding-right: 10px;
-            }
-            #TOC ul {
-                list-style: none;
-                padding-left: 20px;
-            }
-            #TOC ul li a {
-                text-decoration: none;
-                color: #364149;
-                text-overflow: ellipsis;
-                display: block;
-                white-space: nowrap;
-                overflow: hidden;
-            }
-            #TOC ul li a:hover {
-                color: #008cff;
-            }
-            
-            .figure {
-                text-align: center;
-            }
-            .figure p {
-                text-align: center;
-                font-style: italic;
-            }
-            .figure img {
-                  width: 100%;
-            }
-            </style>
+                            body {
+                                font-family: Georgia;
+                                max-width: 800px;
+                                margin: 0 auto;
+                                line-height: 30px;
+                                font-size: 18px;
+                                padding-left: 350px;
+                                padding-right: 50px;
+                                color: #111;
+                            }
+
+                            h1, h2, h3, h4, h5, h6 {
+                                font-family: Arial;
+                            }
+
+                            h1 {
+                                padding-top: 200px;
+                                line-height: 50px;
+                            }
+                            h2 {
+                                padding-top: 30px;
+                            }
+                            h3 {
+                                padding-top: 20px;
+                            }
+                            h4 {
+                                padding-top: 10px;
+                            }
+                            p {
+                                text-align: justify;
+                            }
+                            p a {
+                                word-wrap: break-word;
+                                white-space: pre;
+                            }
+                            code {
+                                word-wrap: break-word;
+                            }
+                            blockquote {
+                                border-left: 3px solid #eee;
+                                margin-left: 20px;
+                                padding-left: 20px;
+                            }
+
+                            ::selection {
+                                background-color: #E4E4E4;
+                            }
+
+                            table {
+                                width: 100%;
+                            }
+                            table caption {
+                                font-weight: bold;
+                            }
+                            table tr {
+                                padding: 0;
+                                margin: 0;
+                                background-color: #f0f0f0;
+                            }
+                            table tr.even {
+                                background-color: #fafafa;
+                            }
+                            table td {
+                                margin: 0;
+                                padding: 3px 5px;
+                            }
+
+                            p span.added {
+                                color: green;
+                                background-color: #FFF3C5;
+                            }
+                            p span.removed {
+                                color: red;
+                                background-color: #FFF3C5;
+                            }
+
+                            #title-page {
+                                padding: 80px 0;
+                            }
+
+                            #TOC {
+                                position: fixed;
+                                left: 0;
+                                top: 0;
+                                overflow-y: scroll;
+                                height: 100%;
+                                background: #fafafa;
+                                max-width: 300px;
+                                font-family: Arial;
+                                font-size: 15px;
+                                line-height: 30px;
+                            }
+                            ::-webkit-scrollbar {
+                                width: 8px;
+                            }
+                            ::-webkit-scrollbar-track {
+                                background-color: #ECECEC;
+                            }
+                            ::-webkit-scrollbar-thumb {
+                                background-color: #B0B0B0;
+                                border-radius: 8px;
+                            }
+                            #TOC > ul {
+                                padding-right: 10px;
+                            }
+                            #TOC ul {
+                                list-style: none;
+                                padding-left: 20px;
+                            }
+                            #TOC ul li a {
+                                text-decoration: none;
+                                color: #364149;
+                                text-overflow: ellipsis;
+                                display: block;
+                                white-space: nowrap;
+                                overflow: hidden;
+                            }
+                            #TOC ul li a:hover {
+                                color: #008cff;
+                            }
+
+                            .figure {
+                                text-align: center;
+                            }
+                            .figure p {
+                                text-align: center;
+                                font-style: italic;
+                            }
+                            .figure img {
+                                  width: 100%;
+                            }
+                            </style>
                 <script src="js/jquery.js"></script>
         <script src="js/diff.js"></script>
         <script src="js/main.js"></script>
@@ -224,329 +223,412 @@
                 <li><a href="#list-of-figures">List of figures</a></li>
                 <li><a href="#list-of-tables">List of tables</a></li>
                 <li><a href="#abbreviations">Abbreviations</a></li>
-                <li><a href="#introduction-with-a-citation"><span class="toc-section-number">1</span> Introduction, with a citation</a><ul>
-                <li><a href="#background"><span class="toc-section-number">1.1</span> Background</a></li>
-                <li><a href="#maths"><span class="toc-section-number">1.2</span> Maths</a></li>
-                <li><a href="#the-middle-bit"><span class="toc-section-number">1.3</span> The middle bit</a><ul>
-                <li><a href="#subsection-of-the-middle-bit"><span class="toc-section-number">1.3.1</span> Subsection of the middle bit</a></li>
+                <li><a href="#the-issue-of-sign-language-grammars"><span class="toc-section-number">1</span> The Issue of <br>Sign Language Grammars</a>
+                <ul>
+                <li><a href="#introduction"><span class="toc-section-number">1.1</span> Introduction</a></li>
+                <li><a href="#levels-of-linguistic-complexity"><span class="toc-section-number">1.2</span> Levels of Linguistic Complexity</a></li>
+                <li><a href="#maths"><span class="toc-section-number">1.3</span> Maths</a></li>
+                <li><a href="#the-middle-bit"><span class="toc-section-number">1.4</span> The middle bit</a>
+                <ul>
+                <li><a href="#subsection-of-the-middle-bit"><span class="toc-section-number">1.4.1</span> Subsection of the middle bit</a></li>
                 </ul></li>
-                <li><a href="#summary-of-chapters"><span class="toc-section-number">1.4</span> Summary of chapters</a></li>
+                <li><a href="#summary-of-chapters"><span class="toc-section-number">1.5</span> Summary of chapters</a></li>
                 </ul></li>
-                <li><a href="#literature-review-with-maths"><span class="toc-section-number">2</span> Literature review, with maths</a><ul>
-                <li><a href="#introduction"><span class="toc-section-number">2.1</span> Introduction</a></li>
+                <li><a href="#literature-review-with-maths"><span class="toc-section-number">2</span> Literature review, with maths</a>
+                <ul>
+                <li><a href="#introduction-1"><span class="toc-section-number">2.1</span> Introduction</a></li>
                 <li><a href="#the-middle"><span class="toc-section-number">2.2</span> The middle</a></li>
                 <li><a href="#conclusion"><span class="toc-section-number">2.3</span> Conclusion</a></li>
                 </ul></li>
-                <li><a href="#first-research-study-with-code"><span class="toc-section-number">3</span> First research study, with code</a><ul>
-                <li><a href="#introduction-1"><span class="toc-section-number">3.1</span> Introduction</a></li>
-                <li><a href="#method"><span class="toc-section-number">3.2</span> Method</a><ul>
+                <li><a href="#first-research-study-with-code"><span class="toc-section-number">3</span> First research study, with code</a>
+                <ul>
+                <li><a href="#introduction-2"><span class="toc-section-number">3.1</span> Introduction</a></li>
+                <li><a href="#method"><span class="toc-section-number">3.2</span> Method</a>
+                <ul>
                 <li><a href="#subsection-1-with-example-code-block"><span class="toc-section-number">3.2.1</span> Subsection 1 with example code block</a></li>
-                <li><a href="#subsection-2"><span class="toc-section-number">3.2.2</span> Subsection 2</a></li>
                 </ul></li>
                 <li><a href="#results"><span class="toc-section-number">3.3</span> Results</a></li>
                 <li><a href="#discussion"><span class="toc-section-number">3.4</span> Discussion</a></li>
                 <li><a href="#conclusion-1"><span class="toc-section-number">3.5</span> Conclusion</a></li>
                 </ul></li>
-                <li><a href="#research-containing-a-figure"><span class="toc-section-number">4</span> Research containing a figure</a><ul>
-                <li><a href="#introduction-2"><span class="toc-section-number">4.1</span> Introduction</a></li>
-                <li><a href="#method-1"><span class="toc-section-number">4.2</span> Method</a><ul>
+                <li><a href="#research-containing-a-figure"><span class="toc-section-number">4</span> Research containing a figure</a>
+                <ul>
+                <li><a href="#introduction-3"><span class="toc-section-number">4.1</span> Introduction</a></li>
+                <li><a href="#method-1"><span class="toc-section-number">4.2</span> Method</a>
+                <ul>
                 <li><a href="#subsection-1"><span class="toc-section-number">4.2.1</span> Subsection 1</a></li>
-                <li><a href="#subsection-2-1"><span class="toc-section-number">4.2.2</span> Subsection 2</a></li>
+                <li><a href="#subsection-2"><span class="toc-section-number">4.2.2</span> Subsection 2</a></li>
                 </ul></li>
                 <li><a href="#results-1"><span class="toc-section-number">4.3</span> Results</a></li>
                 <li><a href="#discussion-1"><span class="toc-section-number">4.4</span> Discussion</a></li>
                 <li><a href="#conclusion-2"><span class="toc-section-number">4.5</span> Conclusion</a></li>
                 </ul></li>
-                <li><a href="#research-containing-a-table"><span class="toc-section-number">5</span> Research containing a table</a><ul>
-                <li><a href="#introduction-3"><span class="toc-section-number">5.1</span> Introduction</a></li>
-                <li><a href="#method-2"><span class="toc-section-number">5.2</span> Method</a><ul>
+                <li><a href="#research-containing-a-table"><span class="toc-section-number">5</span> Research containing a table</a>
+                <ul>
+                <li><a href="#introduction-4"><span class="toc-section-number">5.1</span> Introduction</a></li>
+                <li><a href="#method-2"><span class="toc-section-number">5.2</span> Method</a>
+                <ul>
                 <li><a href="#subsection-1-1"><span class="toc-section-number">5.2.1</span> Subsection 1</a></li>
-                <li><a href="#subsection-2-2"><span class="toc-section-number">5.2.2</span> Subsection 2</a></li>
+                <li><a href="#subsection-2-1"><span class="toc-section-number">5.2.2</span> Subsection 2</a></li>
                 </ul></li>
                 <li><a href="#results-2"><span class="toc-section-number">5.3</span> Results</a></li>
                 <li><a href="#discussion-2"><span class="toc-section-number">5.4</span> Discussion</a></li>
                 <li><a href="#conclusion-3"><span class="toc-section-number">5.5</span> Conclusion</a></li>
                 </ul></li>
-                <li><a href="#final-research-study"><span class="toc-section-number">6</span> Final research study</a><ul>
-                <li><a href="#introduction-4"><span class="toc-section-number">6.1</span> Introduction</a></li>
-                <li><a href="#method-3"><span class="toc-section-number">6.2</span> Method</a><ul>
+                <li><a href="#final-research-study"><span class="toc-section-number">6</span> Final research study</a>
+                <ul>
+                <li><a href="#introduction-5"><span class="toc-section-number">6.1</span> Introduction</a></li>
+                <li><a href="#method-3"><span class="toc-section-number">6.2</span> Method</a>
+                <ul>
                 <li><a href="#subsection-1-2"><span class="toc-section-number">6.2.1</span> Subsection 1</a></li>
-                <li><a href="#subsection-2-3"><span class="toc-section-number">6.2.2</span> Subsection 2</a></li>
+                <li><a href="#subsection-2-2"><span class="toc-section-number">6.2.2</span> Subsection 2</a></li>
                 </ul></li>
                 <li><a href="#results-3"><span class="toc-section-number">6.3</span> Results</a></li>
                 <li><a href="#discussion-3"><span class="toc-section-number">6.4</span> Discussion</a></li>
                 <li><a href="#conclusion-4"><span class="toc-section-number">6.5</span> Conclusion</a></li>
                 </ul></li>
-                <li><a href="#conclusion-5"><span class="toc-section-number">7</span> Conclusion</a><ul>
+                <li><a href="#conclusion-5"><span class="toc-section-number">7</span> Conclusion</a>
+                <ul>
                 <li><a href="#thesis-summary"><span class="toc-section-number">7.1</span> Thesis summary</a></li>
                 <li><a href="#future-work"><span class="toc-section-number">7.2</span> Future work</a></li>
                 </ul></li>
                 <li><a href="#appendix-1-some-extra-stuff">Appendix 1: Some extra stuff</a></li>
                 <li><a href="#appendix-2-some-more-extra-stuff">Appendix 2: Some more extra stuff</a></li>
-                <li><a href="#references">References</a></li>
+                <li><a href="#references"><span class="toc-section-number">8</span> References</a></li>
                 </ul>
             </div>
                                 <!--
-For latest UNSW requirements see here:
-https://research.unsw.edu.au/thesis-submission
+                                For latest UNSW requirements see here:
+                                https://research.unsw.edu.au/thesis-submission
 
-For Thesis Format Guide see here:
-https://research.unsw.edu.au/sites/default/files/documents/thesis_format_guide_-_most_recent_vers_10.pdf
+                                For Thesis Format Guide see here:
+                                https://research.unsw.edu.au/sites/default/files/documents/thesis_format_guide_-_most_recent_vers_10.pdf
 
-Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
+                                Except where otherwise noted, content in this thesis is licensed under a Creative Commons Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited. Copyright 2015,Tom Pollard.
 
-ammended for UNSW by Mathew Lipson, 2018
--->
+                                ammended for UNSW by Mathew Lipson, 2018
+                                -->
+                                <!-- 
+                                These pages are for UNSW official declarations. For latest requirements, refer to: 
+                                https://research.unsw.edu.au/thesis-submission
 
-<!-- 
-These pages are for UNSW official declarations. For latest requirements, refer to: 
-https://research.unsw.edu.au/thesis-submission
+                                UNSW Thesis Dissertation Sheet from:
+                                https://research.unsw.edu.au/document/thesisdissertation_sheet.docx
 
-UNSW Thesis Dissertation Sheet from:
-https://research.unsw.edu.au/document/thesisdissertation_sheet.docx
+                                UNSW Originality Statement from:
+                                https://research.unsw.edu.au/sites/default/files/documents/originalitystatement.pdf 
+                                -->
+                                <h1 class="unnumbered" id="abstract">Abstract</h1>
+                                <!-- This is the abstract -->
+                                <p>Bidi bidi bidi.</p>
+                                <h1 class="unnumbered" id="acknowledgements">Acknowledgements</h1>
+                                <!-- This is for acknowledging all of the people who helped out -->
+                                <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam congue fermentum ante, semper porta nisl consectetur ut. Duis ornare sit amet dui ac faucibus. Phasellus ullamcorper leo vitae arcu ultricies cursus. Duis tristique lacus eget metus bibendum, at dapibus ante malesuada. In dictum nulla nec porta varius. Fusce et elit eget sapien fringilla maximus in sit amet dui.</p>
+                                <p>Mauris eget blandit nisi, faucibus imperdiet odio. Suspendisse blandit dolor sed tellus venenatis, venenatis fringilla turpis pretium. Donec pharetra arcu vitae euismod tincidunt. Morbi ut turpis volutpat, ultrices felis non, finibus justo. Proin convallis accumsan sem ac vulputate. Sed rhoncus ipsum eu urna placerat, sed rhoncus erat facilisis. Praesent vitae vestibulum dui. Proin interdum tellus ac velit varius, sed finibus turpis placerat.</p>
+                                <!-- Use the \newpage command to force a new page -->
+                                <h1 class="unnumbered" id="list-of-figures">List of figures</h1>
+                                <!--
+                                For me, this was the only drawback of writing in Markdown: it is not possible to add a short caption to figures and tables. This means that the \listoftables and \listoffigures commands will generate lists using the full titles, which is probably isn't what you want. For now, the solution is to create the lists manually, when everything else is finished.
+                                -->
+                                <p>Figure 4.1 This is an example figure . . . <br />
+                                Figure x.x Short title of the figure . . . </p>
+                                <h1 class="unnumbered" id="list-of-tables">List of tables</h1>
+                                <!-- 
+                                For me, this was the only drawback of writing in Markdown: it is not possible to add a short caption to figures and tables. This means that the \listoftables and \listoffigures commands will generate lists using the full titles, which is probably isn't what you want. For now, the solution is to create the lists manually, when everything else is finished.
+                                -->
+                                <p>Table 5.1 This is an example table . . . <br />
+                                Table x.x Short title of the figure . . . </p>
+                                <h1 class="unnumbered" id="abbreviations">Abbreviations</h1>
 
-UNSW Originality Statement from:
-https://research.unsw.edu.au/sites/default/files/documents/originalitystatement.pdf 
--->
+                                <h1 data-number="1" id="the-issue-of-sign-language-grammars"><span class="header-section-number">1</span> The Issue of <br>Sign Language Grammars</h1>
+                                <p>Sign languages have been at the center of much debate about iconicity in linguistic encoding. Language researchers went from completely rejecting sign languages as natural, full-fledged languages to finding empirical tests to prove that they follow linguistic rules just as spoken languages do. Although some of the previous research on proving the linguistic status of sign languages had to ignore their iconic component, recent research takes iconicity as an inherent property of human language and central to understanding its intricacies, and pushes the limits of linguistic research in favor of abandoning the old black-or-white understanding of structured tools of interpersonal communication and bringing the threshold of required arbitrariness down as well as shifting its focus to more abstract concepts found in the building blocks of Language. In this dissertation, I study a highly iconic environment, instrumental constructions, in three unrelated sign languages with the aim of finding explanations to why signers make certain linguistic decisions and why their decisions show a great deal of variation. My findings show that there are multiple intertwined factors at play that lie not only internally to the linguistic system but also elsewhere externally, including preference and world knowledge. This dissertation takes a holistic approach to the phenomenon known as Language and seeks flexible answers to the stochastic behaviors of signers while building a model that relies on statistical and computational analyses of naturalistic data.</p>
+                                <h2 data-number="1.1" id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
+                                <p><mark>This is the introduction. To include a citation to the text, just add the citation key shown in the references.bib file. The style of the citation is determined by the ref_format.csl file. For example, cite like this <span class="citation" data-cites="Cousteau1963">[@Cousteau1963]</span>.</mark></p>
+                                <p>Sign languages use <em>classifier constructions</em> to encode certain grammatical relations. The term <em>classifier</em> was borrowed from studies conducted on spoken language morphology <mark>(XXXX – the classifier types person – Supalla?)</mark> and has since become a popular term to refer to many instances of different types of morphological markings. <mark>[INSERT: What are classifiers in spoken languages? Why are the structures in question called ‘classifier constructions’ in signed languages?]</mark>. Sign languages have a very extensive range of types of classifier use: from marking localizations in space to much more complex forms involving multiple discourse participants (XXXX – check SL classifier literature). The predicate of an instrumental utterance is a classic example of a complex classifier predicate and it is precisely what this dissertation is about.</p>
+                                <pre><code>[INSERT: Instrumental example and below insert a paragraph talking about how this construction might seem like a series of gestures – try to stick with a simple example such as “cut with scissors”] </code></pre>
+                                <p>I take the space in this chapter to walk the reader from the general key concepts in sign language research to more specific areas concerning classifier constructions. I will then present some broader literature on instrumentals followed by the related work that has been done on sign language instrumental constructions. To be more precise, I will talk about high level topics that include (i) different levels of linguistic complexity in sign languages, (ii) how the morphologies of sign languages are structured and where they differ from those of spoken languages, (iii) gesture and how it permeates the grammatical fabric of sign languages, (iv) the interfaces of iconicity and arbitrariness in linguistic encoding and how that manifests in the lexicon. I will then dig deeper into more specific matters on (v) classifier predicates in sign languages, (vi) the semantics of instrumentals and (vii) instrumental utterances in sign languages, which will pave the way to the next chapter on the hypotheses and production data. By the end of this chapter, I will have shown to the reader that while sign languages are home to domain-specific structures, they do nonetheless follow the same abstract concepts as spoken languages do such as argument and event structure, theta roles and morphemic representation.</p>
+                                <!-- 
+                                To include a reference, add the citation key shown in the references.bib file.
+                                -->
+                                <h2 data-number="1.2" id="levels-of-linguistic-complexity"><span class="header-section-number">1.2</span> Levels of Linguistic Complexity</h2>
+                                <p>Sign language linguistics lie in a secluded position within the dominant field of spoken language linguistics while also intersecting with the fields of psychology and gesture research. Despite the misunderstandings concerning sign languages and the limited availability of research on them, throughout many years of research they have proven to provide key concepts in understanding the human linguistic capabilities and cognitive processes which were previously unknown to researchers. Some of these concepts broaden the limits of the levels of linguistic representation and complexity which were once deemed to have reached their limits. Sign languages, despite their standalone positioning far from spoken languages, serve the same communicative purposes and functions that spoken languages do and enrich the ways linguistic complexity can manifest at the interdependent levels of phonological, morphological and syntactic representations.</p>
+                                <blockquote>
+                                <blockquote>
+                                <p>p. 55 in Brentari - Complexity Complexity is a phenomenon much talked about in linguistics. Some forms are considered to be more complex than others and complexity comes in different flavors (insert Sinnemaki and stuff here – both citations and discussion on complexity). Sign languages are no different than spoken ones with regards to complexity. In the case of classifier use to express instrumental meaning, we can talk about phonological, morphological, semantic and syntactic complexity. Phonological complexity can be perceived at the levels of ease of articulation of the phonological building blocks of a sign. Signs can be decomposed into phonemes, and phonemes are made up of sign features: handshape, movement and place of articulation (see Brentari, 1998; Sandler, 1989). Each handshape has an internal structure with varying complexity. Fewer features specifications mean less complexity. Less complex forms are more prevalent than complex ones in language production (IS THIS TRUE? CITE IF IT IS – talk about DB’s framework here and say how certain sign languages tend to avoid the use of complex handshapes, then wrap up with how we won’t be looking at phonological complexity in this dissertation).</p>
+                                </blockquote>
+                                </blockquote>
+                                <p>Morphemes and syllables are different levels of linguistic representation. The extent of a syllable is determined by how much dependent phonological material its nucleus can carry with respect to the specific phonological limitations of a language. For instance, Turkish does not allow onset consonant clusters (<em>CCV, </em>CCVC, *CCVCC), while coda consonant clusters are allowed with certain restrictions that obey the sonority hierarchy (CVCC, VCC). In a recent computational study aiming to parse Turkish text into morphemes, I found that the most frequent syllable structure in Turkish is CV (XY%), followed by CVC (XY%), VC(XY%), VCC(XY%), CVCC(XY%) (total number of words: XXX, total number of syllables: YYY). Sign languages, as all natural languages do, respect certain rules in structuring their syllables and distributing their meaning bearing units, i.e. morphemes, across linguistic signals.</p>
+                                <p>Sign languages use the gestural modality as an articulatory system to transmit information and the visual modality to as a perceptual system to receive it. Spoken languages, on the other hand, use different channels to transmit (vocal modality) and to receive (auditory modality) information. These most fundamental differences between the two prevalent modes of human language create a dichotomy of systems that serve the same purpose of communication but with discernible particularities in their subcomponents. The following in Table X.Y. from Meier (2002) summarizes the differences between signed and spoken languages in their articulatory and perceptual systems.</p>
+                                <!-- Force the table onto a newpage -->
+                                <!-- \newpage -->
+                                <table>
+                                <caption>Key differences between signed and spoken languages’ <em>articulatory</em> systems. </caption>
+                                <colgroup>
+                                <col style="width: 50%" />
+                                <col style="width: 50%" />
+                                </colgroup>
+                                <thead>
+                                <tr class="header">
+                                <th style="text-align: center;"><em>Sign</em></th>
+                                <th style="text-align: center;"><em>Speech</em></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="odd">
+                                <td style="text-align: center;">• Light source external to the signer</td>
+                                <td style="text-align: center;">• Sound source internal to the speaker</td>
+                                </tr>
+                                <tr class="even">
+                                <td style="text-align: center;">• Articulators move in a transparent space, relatively massive and paired</td>
+                                <td style="text-align: center;">• Articulators largely hidden, relatively small and not paired</td>
+                                </tr>
+                                </tbody>
+                                </table>
+                                <table>
+                                <caption>Key differences between signed and spoken languages’ <em>perceptual</em> systems. </caption>
+                                <colgroup>
+                                <col style="width: 50%" />
+                                <col style="width: 50%" />
+                                </colgroup>
+                                <thead>
+                                <tr class="header">
+                                <th style="text-align: center;"><em>Sign</em></th>
+                                <th style="text-align: center;"><em>Speech</em></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="odd">
+                                <td style="text-align: center;">• Signer must be in view of addressee</td>
+                                <td style="text-align: center;">• Speaker need not be in view of addressee]</td>
+                                </tr>
+                                <tr class="even">
+                                <td style="text-align: center;">• High spatial resolution of vision; lower temporal resolution than audition</td>
+                                <td style="text-align: center;">• High temporal resolution of audition; lower spatial resolution than vision</td>
+                                </tr>
+                                <tr class="odd">
+                                <td style="text-align: center;">• Visual stimuli generally not categorically perceived</td>
+                                <td style="text-align: center;">• Speech is categorically perceived</td>
+                                </tr>
+                                <tr class="even">
+                                <td style="text-align: center;">• Articulatory gestures as the object of perception</td>
+                                <td style="text-align: center;">• Acoustic events as the object of perception</td>
+                                </tr>
+                                </tbody>
+                                </table>
+                                <p>These differences in the nature of the two modalities are manifested in how the atomic units of meaning as well as syllables are formed across modalities. Brentari (1998), argues that movement is the locus of sonority in a sign syllable and therefore visually the most salient part of a sign. She proves her point by discussing how an epenthetical movement is inserted when a sign underlyingly lacks a movement (e.g. the ASL sign THINK), pretty much an analog of how spoken languages break up consonant clusters with a semantically vacuous, phonologically unmarked epenthetical vowel that forms the nucleus of an otherwise missing syllable. Since sign languages, contra spoken languages, have multiple articulators with multiple joint sets at different anatomical levels, multiple, simultaneous movements happening at different joints is a possibility. This, however, according to Brentari, does not necessarily mean every single movement in a single time slot constitutes a syllable of its own. She argues that the longer movement in a sign will be the nucleus of the syllable. She shows that path movement is more sonorous than a local, smaller movement because it has more visibility for the interlocutor and is perceived as ‘louder’ than a local movement. Brentari (1998)’s SYLLABLE COUNTING CRITERIA in are as follows:</p>
+                                <ol type="a">
+                                <li>The number of syllables in a sequence of signs equals the number of sequential movements in that string.</li>
+                                <li>When several shorter (e.g. trilled) movements co-occur with a single (e.g. path) movement of longer duration, the longer movement is the one to which the syllable refers – e.g. ASL DREAM, which is one syllable containing repeated trilled bending movements.</li>
+                                <li>When two or more movements occur at exactly the same time, it counts as one syllable, e.g. ASL INFORM is one syllable containing an aperture change and a path movement.</li>
+                                </ol>
+                                <p>A different level of complexity, at the level of morphological representation, can be measured in terms of how semantically-loaded a linguistic form is. Sign languages differ from spoken languages in one important aspect: spoken languages tend to stack meanings horizontally while sign languages allow for heavier vertical stacking (CITE). This is known as sequential (horizontal) vs. simultaneous (vertical) morphology and has consequences for both how the morphology is structured and how it interacts with phonology and semantics. In other words, while a single sign is likely to be monosyllabic but polymorphemic, a single spoken morpheme tends to overlap with one or more syllables, oftentimes spanning multiple syllable nuclei. The following schemata in Figure  and the Turkish sentence in (1) illustrate this distinction.</p>
+                                <!-- 
+                                Figures can be added with the following syntax:
+                                ![my_caption \label{my_label}](source/figures/my_image.pdf){ width=50% }
 
+                                For details on setting attributes like width and height, see:
+                                http://pandoc.org/MANUAL.html#extension-link_attributes
+                                -->
+                                <figure>
+                                <img src="source/figures/fig1_sequentialMorph.png" style="width:100.0%" alt="Impressionistic distribution of morphemes (\mu) across syllables (\sigma) in the two modalities " /><figcaption aria-hidden="true">Impressionistic distribution of morphemes (<span class="math inline">\(\mu\)</span>) across syllables (<span class="math inline">\(\sigma\)</span>) in the two modalities </figcaption>
+                                </figure>
+                                <ol class="example" type="1">
+                                <li>Sequential morphology – horizontal stacking ()</li>
+                                </ol>
+                                <p>Bakan-ın   özel istek-ler-i yerine^getir-il-me-meli<br />
+                                minister-GEN private request-PL-POSS grant-PASS-NEG-DEON<br />
+                                <em>The minister’s private requests should not be granted.</em></p>
+                                <p>Figure (a) draws an impressionistic illustration of how syllables and morphemes tend to interact in certain spoken languages. One morpheme or less is available per one spoken syllable. In other words, the overall morpheme-to-syllable ratio in spoken languages is likely to be less than 1. The Turkish sentence in (2) has 4 phonological words with morpheme-to-syllable ratios of 0.66, 0.5, 0.75, 0.44. The sentence has 10 morphemes expressed in 18 syllables. The sentence-wide morpheme-to-syllable ratio is 0.55. This pattern of morphological sequentiality of spoken languages is, of course, not without exception. We see varying degrees of limited simultaneity especially in tone languages, Semitic languages, which have templatic morphologies, and also in small pockets of the morphologies of other spoken languages where contractions between two morphemes can occur. However, the general trend points toward a sequential morphology for spoken languages as depicted in Figure (a).</p>
+                                <h2 data-number="1.3" id="maths"><span class="header-section-number">1.3</span> Maths</h2>
+                                <p>Numbered equations are assisted by installing <a href="https://github.com/lierdakil/pandoc-crossref">pandoc-crossref</a>:</p>
+                                <p><span id="eq:yourlabel"><span class="math display">\[ \rho c \frac{\partial T}{\partial t} =  \frac{\partial q} {\partial x} \qquad(1)\]</span></span></p>
+                                <p>Now you can reference your equations (eq. 1) inline. If using pandoc-crossref, add the following to each relevant section of the makefile.</p>
+                                <p><code>--filter pandoc-crossref</code></p>
+                                <p>Non numbered equations: <span class="math display">\[ \rho c \frac{\partial T}{\partial t} =  \frac{\partial q} {\partial x} \]</span></p>
+                                <h2 data-number="1.4" id="the-middle-bit"><span class="header-section-number">1.4</span> The middle bit</h2>
+                                <p>This is the middle bit. Phasellus quis ex in ipsum pellentesque lobortis tincidunt sed massa. Nullam euismod sem quis dictum condimentum. Suspendisse risus metus, elementum eu congue quis, viverra ac metus. Donec non lectus at lectus euismod laoreet pharetra semper dui. Donec sed eleifend erat, vel ultrices nibh. Nam scelerisque turpis ac nunc mollis, et rutrum nisl luctus.</p>
+                                <p>Cras eleifend velit diam, eu viverra mi volutpat ut. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec finibus leo nec dui imperdiet, tincidunt ornare orci venenatis. Maecenas placerat efficitur est, eu blandit magna hendrerit eu.</p>
+                                <h3 data-number="1.4.1" id="subsection-of-the-middle-bit"><span class="header-section-number">1.4.1</span> Subsection of the middle bit</h3>
+                                <p>This is a subsection of the middle bit. Quisque sit amet tempus arcu, ac suscipit ante. Cras massa elit, pellentesque eget nisl ut, malesuada rutrum risus. Nunc in venenatis mi. Curabitur sit amet suscipit eros, non tincidunt nibh. Phasellus lorem lectus, iaculis non luctus eget, tempus non risus. Suspendisse ut felis mi.</p>
+                                <h2 data-number="1.5" id="summary-of-chapters"><span class="header-section-number">1.5</span> Summary of chapters</h2>
+                                <!-- 
+                                For italic, add one * on either side of the text
+                                For bold, add two * on either side of the text
+                                For bold and italic, add _** on either side of the text
+                                -->
+                                <p>This is a brief outline of what went into each chapter. <strong>Chapter 1</strong> gives a background on duis tempus justo quis arcu consectetur sollicitudin. <strong>Chapter 2</strong> discusses morbi sollicitudin gravida tellus in maximus. <strong>Chapter 3</strong> discusses vestibulum eleifend turpis id turpis sollicitudin aliquet. <strong>Chapter 4</strong> shows how phasellus gravida non ex id aliquet. Proin faucibus nibh sit amet augue blandit varius.</p>
+                                <h1 data-number="2" id="literature-review-with-maths"><span class="header-section-number">2</span> Literature review, with maths</h1>
+                                <!--
+                                After the introductory chapter, it seems fairly common to 
+                                include a chapter that reviews the literature and 
+                                introduces methodology used throughout the thesis.
+                                -->
+                                <h2 data-number="2.1" id="introduction-1"><span class="header-section-number">2.1</span> Introduction</h2>
+                                <p>This is the introduction. Duis in neque felis. In hac habitasse platea dictumst. Cras eget rutrum elit. Pellentesque tristique venenatis pellentesque. Cras eu dignissim quam, vel sodales felis. Vestibulum efficitur justo a nibh cursus eleifend. Integer ultrices lorem at nunc efficitur lobortis.</p>
+                                <h2 data-number="2.2" id="the-middle"><span class="header-section-number">2.2</span> The middle</h2>
+                                <p>This is the literature review. Nullam quam odio, volutpat ac ornare quis, vestibulum nec nulla. Aenean nec dapibus in mL/min<sup>-1</sup>. Mathematical formula can be inserted using Latex:</p>
+                                <ol start="2" class="example" type="1">
+                                <li><span class="math inline">\(f(x) = ax^3 + bx^2 + cx + d\)</span></li>
+                                </ol>
+                                <p>Nunc eleifend, ex a luctus porttitor, felis ex suscipit tellus, ut sollicitudin sapien purus in libero. Nulla blandit eget urna vel tempus. Praesent fringilla dui sapien, sit amet egestas leo sollicitudin at.</p>
+                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed faucibus pulvinar volutpat. Ut semper fringilla erat non dapibus. Nunc vitae felis eget purus placerat finibus laoreet ut nibh.</p>
+                                <h2 data-number="2.3" id="conclusion"><span class="header-section-number">2.3</span> Conclusion</h2>
+                                <p>This is the conclusion. Donec pulvinar molestie urna eu faucibus. In tristique ut neque vel eleifend. Morbi ut massa vitae diam gravida iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                <!-- Insert an unordered list -->
+                                <ul>
+                                <li>first item in the list</li>
+                                <li>second item in the list</li>
+                                <li>third item in the list</li>
+                                </ul>
+                                <h1 data-number="3" id="first-research-study-with-code"><span class="header-section-number">3</span> First research study, with code</h1>
+                                <h2 data-number="3.1" id="introduction-2"><span class="header-section-number">3.1</span> Introduction</h2>
+                                <p>This is the introduction. Nam mollis congue tortor, sit amet convallis tortor mollis eget. Fusce viverra ut magna eu sagittis. Vestibulum at ultrices sapien, at elementum urna. Nam a blandit leo, non lobortis quam. Aliquam feugiat turpis vitae tincidunt ultricies. Mauris ullamcorper pellentesque nisl, vel molestie lorem viverra at.</p>
+                                <h2 data-number="3.2" id="method"><span class="header-section-number">3.2</span> Method</h2>
+                                <p>Suspendisse iaculis in lacus ut dignissim. Cras dignissim dictum eleifend. Suspendisse potenti. Suspendisse et nisi suscipit, vestibulum est at, maximus sapien. Sed ut diam tortor.</p>
+                                <h3 data-number="3.2.1" id="subsection-1-with-example-code-block"><span class="header-section-number">3.2.1</span> Subsection 1 with example code block</h3>
+                                <p>This is the first part of the methodology. Cras porta dui a dolor tincidunt placerat. Cras scelerisque sem et malesuada vestibulum. Vivamus faucibus ligula ac sodales consectetur. Aliquam vel tristique nisl. Aliquam erat volutpat. Pellentesque iaculis enim sit amet posuere facilisis. Integer egestas quam sit amet nunc maximus, id bibendum ex blandit.</p>
+                                <p>For syntax highlighting in code blocks, add three “`” characters before and after a code block:</p>
+                                <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mood <span class="op">=</span> <span class="st">&#39;happy&#39;</span></span>
+                                <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> mood <span class="op">==</span> <span class="st">&#39;happy&#39;</span>:</span>
+                                <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;I am a happy robot&quot;</span>)</span></code></pre></div>
+                                <!-- 
+                                Comments can be added like this.
+                                -->
+                                <h2 data-number="3.3" id="results"><span class="header-section-number">3.3</span> Results</h2>
+                                <p>These are the results. Ut accumsan tempus aliquam. Sed massa ex, egestas non libero id, imperdiet scelerisque augue. Duis rutrum ultrices arcu et ultricies. Proin vel elit eu magna mattis vehicula. Sed ex erat, fringilla vel feugiat ut, fringilla non diam.</p>
+                                <h2 data-number="3.4" id="discussion"><span class="header-section-number">3.4</span> Discussion</h2>
+                                <p>This is the discussion. Duis ultrices tempor sem vitae convallis. Pellentesque lobortis risus ac nisi varius bibendum. Phasellus volutpat aliquam varius. Mauris vitae neque quis libero volutpat finibus. Nunc diam metus, imperdiet vitae leo sed, varius posuere orci.</p>
+                                <h2 data-number="3.5" id="conclusion-1"><span class="header-section-number">3.5</span> Conclusion</h2>
+                                <p>This is the conclusion to the chapter. Praesent bibendum urna orci, a venenatis tellus venenatis at. Etiam ornare, est sed lacinia elementum, lectus diam tempor leo, sit amet elementum ex elit id ex. Ut ac viverra turpis. Quisque in nisl auctor, ornare dui ac, consequat tellus.</p>
+                                <h1 data-number="4" id="research-containing-a-figure"><span class="header-section-number">4</span> Research containing a figure</h1>
+                                <h2 data-number="4.1" id="introduction-3"><span class="header-section-number">4.1</span> Introduction</h2>
+                                <p>This is the introduction. Sed vulputate tortor at nisl blandit interdum. Cras sagittis massa ex, quis eleifend purus condimentum congue. Maecenas tristique, justo vitae efficitur mollis, mi nulla varius elit, in consequat ligula nulla ut augue. Phasellus diam sapien, placerat sit amet tempor non, lobortis tempus ante.</p>
+                                <h2 data-number="4.2" id="method-1"><span class="header-section-number">4.2</span> Method</h2>
+                                <p>Donec imperdiet, lectus vestibulum sagittis tempus, turpis dolor euismod justo, vel tempus neque libero sit amet tortor. Nam cursus commodo tincidunt.</p>
+                                <h3 data-number="4.2.1" id="subsection-1"><span class="header-section-number">4.2.1</span> Subsection 1</h3>
+                                <p>This is the first part of the methodology. Duis tempor sapien sed tellus ultrices blandit. Sed porta mauris tortor, eu vulputate arcu dapibus ac. Curabitur sodales at felis efficitur sollicitudin. Quisque at neque sollicitudin, mollis arcu vitae, faucibus tellus.</p>
+                                <h3 data-number="4.2.2" id="subsection-2"><span class="header-section-number">4.2.2</span> Subsection 2</h3>
+                                <p>This is the second part of the methodology. Sed ut ipsum ultrices, interdum ipsum vel, lobortis diam. Curabitur sit amet massa quis tortor molestie dapibus a at libero. Mauris mollis magna quis ante vulputate consequat. Integer leo turpis, suscipit ac venenatis pellentesque, efficitur non sem. Pellentesque eget vulputate turpis. Etiam id nibh at elit fermentum interdum.</p>
+                                <!-- 
+                                Comments can be added like this.
+                                -->
+                                <h2 data-number="4.3" id="results-1"><span class="header-section-number">4.3</span> Results</h2>
+                                <p>These are the results. In vitae odio at libero elementum fermentum vel iaculis enim. Nullam finibus sapien in congue condimentum. Curabitur et ligula et ipsum mollis fringilla.</p>
+                                <h2 data-number="4.4" id="discussion-1"><span class="header-section-number">4.4</span> Discussion</h2>
+                                <p>Figure  shows how to add a figure. Donec ut lacinia nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                <!-- 
+                                Figures can be added with the following syntax:
+                                ![my_caption \label{my_label}](source/figures/my_image.pdf){ width=50% }
 
-<h1 id="abstract" class="unnumbered">Abstract</h1>
-<!-- This is the abstract -->
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et turpis gravida, lacinia ante sit amet, sollicitudin erat. Aliquam efficitur vehicula leo sed condimentum. Phasellus lobortis eros vitae rutrum egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at urna imperdiet, vulputate orci eu, sollicitudin leo. Donec nec dui sagittis, malesuada erat eget, vulputate tellus. Nam ullamcorper efficitur iaculis. Mauris eu vehicula nibh. In lectus turpis, tempor at felis a, egestas fermentum massa.</p>
+                                For details on setting attributes like width and height, see:
+                                http://pandoc.org/MANUAL.html#extension-link_attributes
+                                -->
+                                <figure>
+                                <img src="source/figures/example_figure.png" style="width:100.0%" alt="RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research. " /><figcaption aria-hidden="true">RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research. </figcaption>
+                                </figure>
+                                <h2 data-number="4.5" id="conclusion-2"><span class="header-section-number">4.5</span> Conclusion</h2>
+                                <p>This is the conclusion to the chapter. Quisque nec purus a quam consectetur volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In lorem justo, convallis quis lacinia eget, laoreet eu metus. Fusce blandit tellus tellus. Curabitur nec cursus odio. Quisque tristique eros nulla, vitae finibus lorem aliquam quis. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                                <h1 data-number="5" id="research-containing-a-table"><span class="header-section-number">5</span> Research containing a table</h1>
+                                <h2 data-number="5.1" id="introduction-4"><span class="header-section-number">5.1</span> Introduction</h2>
+                                <p>This is the introduction. Phasellus non purus id mauris aliquam rutrum vitae quis tellus. Maecenas rhoncus ligula nulla, fringilla placerat mi consectetur eu. Aenean nec metus ac est ornare posuere. Nunc ipsum lacus, gravida commodo turpis quis, rutrum eleifend erat. Pellentesque id lorem eget ante porta tincidunt nec nec tellus.</p>
+                                <h2 data-number="5.2" id="method-2"><span class="header-section-number">5.2</span> Method</h2>
+                                <p>Vivamus consectetur, velit in congue lobortis, massa massa lacinia urna, sollicitudin semper ipsum augue quis tortor. Donec quis nisl at arcu volutpat ultrices. Maecenas ex nibh, consequat ac blandit sit amet, molestie in odio. Morbi finibus libero et nisl dignissim, at ultricies ligula pulvinar.</p>
+                                <h3 data-number="5.2.1" id="subsection-1-1"><span class="header-section-number">5.2.1</span> Subsection 1</h3>
+                                <p>This is the first part of the methodology. Integer leo erat, commodo in lacus vel, egestas varius elit. Nulla eget magna quam. Nullam sollicitudin dolor ut ipsum varius tincidunt. Duis dignissim massa in ipsum accumsan imperdiet. Maecenas suscipit sapien sed dui pharetra blandit. Morbi fermentum est vel quam pretium maximus.</p>
+                                <h3 data-number="5.2.2" id="subsection-2-1"><span class="header-section-number">5.2.2</span> Subsection 2</h3>
+                                <p>This is the second part of the methodology. Nullam accumsan condimentum eros eu volutpat. Maecenas quis ligula tempor, interdum ante sit amet, aliquet sem. Fusce tellus massa, blandit id tempus at, cursus in tortor. Nunc nec volutpat ante. Phasellus dignissim ut lectus quis porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <!-- 
+                                Comments can be added like this.
+                                -->
+                                <h2 data-number="5.3" id="results-2"><span class="header-section-number">5.3</span> Results</h2>
+                                <p>Table  shows us how to add a table. Integer tincidunt sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis fringilla, sapien eros aliquet orci, vitae pretium massa neque eu turpis. Pellentesque tincidunt aliquet volutpat. Ut ornare dui id ex sodales laoreet.</p>
+                                <!-- Force the table onto a newpage -->
+                                <table style="width:89%;">
+                                <caption>This is the table caption. Suspendisse blandit dolor sed tellus venenatis, venenatis fringilla turpis pretium. </caption>
+                                <colgroup>
+                                <col style="width: 27%" />
+                                <col style="width: 33%" />
+                                <col style="width: 27%" />
+                                </colgroup>
+                                <thead>
+                                <tr class="header">
+                                <th style="text-align: left;">Column 1</th>
+                                <th style="text-align: left;">Column 2</th>
+                                <th style="text-align: left;">Column 3</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="odd">
+                                <td style="text-align: left;">Row 1</td>
+                                <td style="text-align: left;">0.1</td>
+                                <td style="text-align: left;">0.2</td>
+                                </tr>
+                                <tr class="even">
+                                <td style="text-align: left;">Row 2</td>
+                                <td style="text-align: left;">0.3</td>
+                                <td style="text-align: left;">0.3</td>
+                                </tr>
+                                <tr class="odd">
+                                <td style="text-align: left;">Row 3</td>
+                                <td style="text-align: left;">0.4</td>
+                                <td style="text-align: left;">0.4</td>
+                                </tr>
+                                <tr class="even">
+                                <td style="text-align: left;">Row 4</td>
+                                <td style="text-align: left;">0.5</td>
+                                <td style="text-align: left;">0.6</td>
+                                </tr>
+                                </tbody>
+                                </table>
+                                <h2 data-number="5.4" id="discussion-2"><span class="header-section-number">5.4</span> Discussion</h2>
+                                <p>This is the discussion. Etiam sit amet mi eros. Donec vel nisi sed purus gravida fermentum at quis odio. Vestibulum quis nisl sit amet justo maximus molestie. Maecenas vitae arcu erat. Nulla facilisi. Nam pretium mauris eu enim porttitor, a mattis velit dictum. Nulla sit amet ligula non mauris volutpat fermentum quis vitae sapien.</p>
+                                <h2 data-number="5.5" id="conclusion-3"><span class="header-section-number">5.5</span> Conclusion</h2>
+                                <p>This is the conclusion to the chapter. Nullam porta tortor id vehicula interdum. Quisque pharetra, neque ut accumsan suscipit, orci orci commodo tortor, ac finibus est turpis eget justo. Cras sodales nibh nec mauris laoreet iaculis. Morbi volutpat orci felis, id condimentum nulla suscipit eu. Fusce in turpis quis ligula tempus scelerisque eget quis odio. Vestibulum et dolor id erat lobortis ullamcorper quis at sem.</p>
+                                <h1 data-number="6" id="final-research-study"><span class="header-section-number">6</span> Final research study</h1>
+                                <h2 data-number="6.1" id="introduction-5"><span class="header-section-number">6.1</span> Introduction</h2>
+                                <p>This is the introduction. Nunc lorem odio, laoreet eu turpis at, condimentum sagittis diam. Phasellus metus ligula, auctor ac nunc vel, molestie mattis libero. Praesent id posuere ex, vel efficitur nibh. Quisque vestibulum accumsan lacus vitae mattis.</p>
+                                <h2 data-number="6.2" id="method-3"><span class="header-section-number">6.2</span> Method</h2>
+                                <p>In tincidunt viverra dolor, ac pharetra tellus faucibus eget. Pellentesque tempor a enim nec venenatis. Morbi blandit magna imperdiet posuere auctor. Maecenas in maximus est.</p>
+                                <h3 data-number="6.2.1" id="subsection-1-2"><span class="header-section-number">6.2.1</span> Subsection 1</h3>
+                                <p>This is the first part of the methodology. Praesent mollis sem diam, sit amet tristique lacus vulputate quis. Vivamus rhoncus est rhoncus tellus lacinia, a interdum sem egestas. Curabitur quis urna vel quam blandit semper vitae a leo. Nam vel lectus lectus.</p>
+                                <h3 data-number="6.2.2" id="subsection-2-2"><span class="header-section-number">6.2.2</span> Subsection 2</h3>
+                                <p>This is the second part of the methodology. Aenean vel pretium tortor. Aliquam erat volutpat. Quisque quis lobortis mi. Nulla turpis leo, ultrices nec nulla non, ullamcorper laoreet risus.</p>
+                                <!-- 
+                                Comments can be added like this.
+                                -->
+                                <h2 data-number="6.3" id="results-3"><span class="header-section-number">6.3</span> Results</h2>
+                                <p>These are the results. Curabitur vulputate nisl non ante tincidunt tempor. Aenean porta nisi quam, sed ornare urna congue sed. Curabitur in sapien justo. Quisque pulvinar ullamcorper metus, eu varius mauris pellentesque et. In hac habitasse platea dictumst. Pellentesque nec porttitor libero. Duis et magna a massa lacinia cursus.</p>
+                                <h2 data-number="6.4" id="discussion-3"><span class="header-section-number">6.4</span> Discussion</h2>
+                                <p>This is the discussion. Curabitur gravida nisl id gravida congue. Duis est nisi, sagittis eget accumsan ullamcorper, semper quis turpis. Mauris ultricies diam metus, sollicitudin ultricies turpis lobortis vitae. Ut egestas vehicula enim, porta molestie neque consectetur placerat. Integer iaculis sapien dolor, non porta nibh condimentum ut.</p>
+                                <h2 data-number="6.5" id="conclusion-4"><span class="header-section-number">6.5</span> Conclusion</h2>
+                                <p>This is the conclusion to the chapter. Nulla sed condimentum lectus. Duis sed tempor erat, at cursus lacus. Nam vitae tempus arcu, id vestibulum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                                <h1 data-number="7" id="conclusion-5"><span class="header-section-number">7</span> Conclusion</h1>
+                                <!-- 
+                                A chapter that concludes the thesis by summarising the learning points
+                                and outlining future areas for research
+                                -->
+                                <h2 data-number="7.1" id="thesis-summary"><span class="header-section-number">7.1</span> Thesis summary</h2>
+                                <p>In summary, pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc eleifend, ex a luctus porttitor, felis ex suscipit tellus, ut sollicitudin sapien purus in libero. Nulla blandit eget urna vel tempus. Praesent fringilla dui sapien, sit amet egestas leo sollicitudin at.</p>
+                                <h2 data-number="7.2" id="future-work"><span class="header-section-number">7.2</span> Future work</h2>
+                                <p>There are several potential directions for extending this thesis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam gravida ipsum at tempor tincidunt. Aliquam ligula nisl, blandit et dui eu, eleifend tempus nibh. Nullam eleifend sapien eget ante hendrerit commodo. Pellentesque pharetra erat sit amet dapibus scelerisque.</p>
+                                <p>Vestibulum suscipit tellus risus, faucibus vulputate orci lobortis eget. Nunc varius sem nisi. Nunc tempor magna sapien, euismod blandit elit pharetra sed. In dapibus magna convallis lectus sodales, a consequat sem euismod. Curabitur in interdum purus. Integer ultrices laoreet aliquet. Nulla vel dapibus urna. Nunc efficitur erat ac nisi auctor sodales.</p>
+                                <h1 class="unnumbered" id="appendix-1-some-extra-stuff">Appendix 1: Some extra stuff</h1>
+                                <!-- 
+                                This could be a list of papers by the author for example 
+                                -->
+                                <p>Add appendix 1 here. Vivamus hendrerit rhoncus interdum. Sed ullamcorper et augue at porta. Suspendisse facilisis imperdiet urna, eu pellentesque purus suscipit in. Integer dignissim mattis ex aliquam blandit. Curabitur lobortis quam varius turpis ultrices egestas.</p>
+                                <h1 class="unnumbered" id="appendix-2-some-more-extra-stuff">Appendix 2: Some more extra stuff</h1>
+                                <!-- 
+                                This could include extra figures or raw data
+                                -->
+                                <p>Add appendix 2 here. Aliquam rhoncus mauris ac neque imperdiet, in mattis eros aliquam. Etiam sed massa et risus posuere rutrum vel et mauris. Integer id mauris sed arcu venenatis finibus. Etiam nec hendrerit purus, sed cursus nunc. Pellentesque ac luctus magna. Aenean non posuere enim, nec hendrerit lacus. Etiam lacinia facilisis tempor. Aenean dictum nunc id felis rhoncus aliquam.</p>
+                                <!-- 
+                                Do not edit this page.
 
-<h1 id="acknowledgements" class="unnumbered">Acknowledgements</h1>
-<!-- This is for acknowledging all of the people who helped out -->
-<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam congue fermentum ante, semper porta nisl consectetur ut. Duis ornare sit amet dui ac faucibus. Phasellus ullamcorper leo vitae arcu ultricies cursus. Duis tristique lacus eget metus bibendum, at dapibus ante malesuada. In dictum nulla nec porta varius. Fusce et elit eget sapien fringilla maximus in sit amet dui.</p>
-<p>Mauris eget blandit nisi, faucibus imperdiet odio. Suspendisse blandit dolor sed tellus venenatis, venenatis fringilla turpis pretium. Donec pharetra arcu vitae euismod tincidunt. Morbi ut turpis volutpat, ultrices felis non, finibus justo. Proin convallis accumsan sem ac vulputate. Sed rhoncus ipsum eu urna placerat, sed rhoncus erat facilisis. Praesent vitae vestibulum dui. Proin interdum tellus ac velit varius, sed finibus turpis placerat.</p>
-<!-- Use the \newpage command to force a new page -->
+                                References are automatically generated from the BibTex file (References.bib)
 
-
-
-
-<h1 id="list-of-figures" class="unnumbered">List of figures</h1>
-<!--
-For me, this was the only drawback of writing in Markdown: it is not possible to add a short caption to figures and tables. This means that the \listoftables and \listoffigures commands will generate lists using the full titles, which is probably isn't what you want. For now, the solution is to create the lists manually, when everything else is finished.
--->
-<p>Figure 4.1 This is an example figure . . . <br />
-Figure x.x Short title of the figure . . . </p>
-
-
-<h1 id="list-of-tables" class="unnumbered">List of tables</h1>
-<!-- 
-For me, this was the only drawback of writing in Markdown: it is not possible to add a short caption to figures and tables. This means that the \listoftables and \listoffigures commands will generate lists using the full titles, which is probably isn't what you want. For now, the solution is to create the lists manually, when everything else is finished.
--->
-<p>Table 5.1 This is an example table . . . <br />
-Table x.x Short title of the figure . . . </p>
-<h1 id="abbreviations" class="unnumbered">Abbreviations</h1>
-
-
-<h1 id="introduction-with-a-citation"><span class="header-section-number">1</span> Introduction, with a citation</h1>
-<h2 id="background"><span class="header-section-number">1.1</span> Background</h2>
-<p>This is the introduction. To include a citation to the text, just add the citation key shown in the references.bib file. The style of the citation is determined by the ref_format.csl file. For example, cite like this <span class="citation" data-cites="Cousteau1963">(Cousteau Jacques &amp; Dugan James 1963)</span>.</p>
-<!-- 
-To include a reference, add the citation key shown in the references.bib file.
--->
-<h2 id="maths"><span class="header-section-number">1.2</span> Maths</h2>
-<p>Numbered equations are assisted by installing <a href="https://github.com/lierdakil/pandoc-crossref">pandoc-crossref</a>:</p>
-<p><span id="eq:yourlabel"><span class="math display">\[ \rho c \frac{\partial T}{\partial t} =  \frac{\partial q} {\partial x} \qquad(1)\]</span></span></p>
-<p>Now you can reference your equations (eq. 1) inline. If using pandoc-crossref, add the following to each relevant section of the makefile.</p>
-<p><code>--filter pandoc-crossref</code></p>
-<p>Non numbered equations: <span class="math display">\[ \rho c \frac{\partial T}{\partial t} =  \frac{\partial q} {\partial x} \]</span></p>
-<h2 id="the-middle-bit"><span class="header-section-number">1.3</span> The middle bit</h2>
-<p>This is the middle bit. Phasellus quis ex in ipsum pellentesque lobortis tincidunt sed massa. Nullam euismod sem quis dictum condimentum. Suspendisse risus metus, elementum eu congue quis, viverra ac metus. Donec non lectus at lectus euismod laoreet pharetra semper dui. Donec sed eleifend erat, vel ultrices nibh. Nam scelerisque turpis ac nunc mollis, et rutrum nisl luctus.</p>
-<p>Duis faucibus vestibulum elit, sit amet lobortis libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed at cursus nibh. Sed accumsan imperdiet interdum. Proin id facilisis tortor. Proin posuere a neque nec iaculis. Suspendisse potenti. Nullam hendrerit ante mi, vitae iaculis dui laoreet eu.</p>
-<p>Cras eleifend velit diam, eu viverra mi volutpat ut. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec finibus leo nec dui imperdiet, tincidunt ornare orci venenatis. Maecenas placerat efficitur est, eu blandit magna hendrerit eu.</p>
-<h3 id="subsection-of-the-middle-bit"><span class="header-section-number">1.3.1</span> Subsection of the middle bit</h3>
-<p>This is a subsection of the middle bit. Quisque sit amet tempus arcu, ac suscipit ante. Cras massa elit, pellentesque eget nisl ut, malesuada rutrum risus. Nunc in venenatis mi. Curabitur sit amet suscipit eros, non tincidunt nibh. Phasellus lorem lectus, iaculis non luctus eget, tempus non risus. Suspendisse ut felis mi.</p>
-<h2 id="summary-of-chapters"><span class="header-section-number">1.4</span> Summary of chapters</h2>
-<!-- 
-For italic, add one * on either side of the text
-For bold, add two * on either side of the text
-For bold and italic, add _** on either side of the text
--->
-<p>This is a brief outline of what went into each chapter. <strong>Chapter 1</strong> gives a background on duis tempus justo quis arcu consectetur sollicitudin. <strong>Chapter 2</strong> discusses morbi sollicitudin gravida tellus in maximus. <strong>Chapter 3</strong> discusses vestibulum eleifend turpis id turpis sollicitudin aliquet. <strong>Chapter 4</strong> shows how phasellus gravida non ex id aliquet. Proin faucibus nibh sit amet augue blandit varius.</p>
-<h1 id="literature-review-with-maths"><span class="header-section-number">2</span> Literature review, with maths</h1>
-<!--
-After the introductory chapter, it seems fairly common to 
-include a chapter that reviews the literature and 
-introduces methodology used throughout the thesis.
--->
-<h2 id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
-<p>This is the introduction. Duis in neque felis. In hac habitasse platea dictumst. Cras eget rutrum elit. Pellentesque tristique venenatis pellentesque. Cras eu dignissim quam, vel sodales felis. Vestibulum efficitur justo a nibh cursus eleifend. Integer ultrices lorem at nunc efficitur lobortis.</p>
-<h2 id="the-middle"><span class="header-section-number">2.2</span> The middle</h2>
-<p>This is the literature review. Nullam quam odio, volutpat ac ornare quis, vestibulum nec nulla. Aenean nec dapibus in mL/min<sup>-1</sup>. Mathematical formula can be inserted using Latex:</p>
-<ol class="example" type="1">
-<li><span class="math inline">\(f(x) = ax^3 + bx^2 + cx + d\)</span></li>
-</ol>
-<p>Nunc eleifend, ex a luctus porttitor, felis ex suscipit tellus, ut sollicitudin sapien purus in libero. Nulla blandit eget urna vel tempus. Praesent fringilla dui sapien, sit amet egestas leo sollicitudin at.</p>
-<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed faucibus pulvinar volutpat. Ut semper fringilla erat non dapibus. Nunc vitae felis eget purus placerat finibus laoreet ut nibh.</p>
-<h2 id="conclusion"><span class="header-section-number">2.3</span> Conclusion</h2>
-<p>This is the conclusion. Donec pulvinar molestie urna eu faucibus. In tristique ut neque vel eleifend. Morbi ut massa vitae diam gravida iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-<!-- Insert an unordered list -->
-<ul>
-<li>first item in the list</li>
-<li>second item in the list</li>
-<li>third item in the list</li>
-</ul>
-<h1 id="first-research-study-with-code"><span class="header-section-number">3</span> First research study, with code</h1>
-<h2 id="introduction-1"><span class="header-section-number">3.1</span> Introduction</h2>
-<p>This is the introduction. Nam mollis congue tortor, sit amet convallis tortor mollis eget. Fusce viverra ut magna eu sagittis. Vestibulum at ultrices sapien, at elementum urna. Nam a blandit leo, non lobortis quam. Aliquam feugiat turpis vitae tincidunt ultricies. Mauris ullamcorper pellentesque nisl, vel molestie lorem viverra at.</p>
-<h2 id="method"><span class="header-section-number">3.2</span> Method</h2>
-<p>Suspendisse iaculis in lacus ut dignissim. Cras dignissim dictum eleifend. Suspendisse potenti. Suspendisse et nisi suscipit, vestibulum est at, maximus sapien. Sed ut diam tortor.</p>
-<h3 id="subsection-1-with-example-code-block"><span class="header-section-number">3.2.1</span> Subsection 1 with example code block</h3>
-<p>This is the first part of the methodology. Cras porta dui a dolor tincidunt placerat. Cras scelerisque sem et malesuada vestibulum. Vivamus faucibus ligula ac sodales consectetur. Aliquam vel tristique nisl. Aliquam erat volutpat. Pellentesque iaculis enim sit amet posuere facilisis. Integer egestas quam sit amet nunc maximus, id bibendum ex blandit.</p>
-<p>For syntax highlighting in code blocks, add three “`” characters before and after a code block:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1">mood <span class="op">=</span> <span class="st">&#39;happy&#39;</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="cf">if</span> mood <span class="op">==</span> <span class="st">&#39;happy&#39;</span>:</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">    <span class="bu">print</span>(<span class="st">&quot;I am a happy robot&quot;</span>)</a></code></pre></div>
-<h3 id="subsection-2"><span class="header-section-number">3.2.2</span> Subsection 2</h3>
-<p>This is the second part of the methodology. Proin tincidunt odio non sem mollis tristique. Fusce pharetra accumsan volutpat. In nec mauris vel orci rutrum dapibus nec ac nibh. Praesent malesuada sagittis nulla, eget commodo mauris ultricies eget. Suspendisse iaculis finibus ligula.</p>
-<!-- 
-Comments can be added like this.
--->
-<h2 id="results"><span class="header-section-number">3.3</span> Results</h2>
-<p>These are the results. Ut accumsan tempus aliquam. Sed massa ex, egestas non libero id, imperdiet scelerisque augue. Duis rutrum ultrices arcu et ultricies. Proin vel elit eu magna mattis vehicula. Sed ex erat, fringilla vel feugiat ut, fringilla non diam.</p>
-<h2 id="discussion"><span class="header-section-number">3.4</span> Discussion</h2>
-<p>This is the discussion. Duis ultrices tempor sem vitae convallis. Pellentesque lobortis risus ac nisi varius bibendum. Phasellus volutpat aliquam varius. Mauris vitae neque quis libero volutpat finibus. Nunc diam metus, imperdiet vitae leo sed, varius posuere orci.</p>
-<h2 id="conclusion-1"><span class="header-section-number">3.5</span> Conclusion</h2>
-<p>This is the conclusion to the chapter. Praesent bibendum urna orci, a venenatis tellus venenatis at. Etiam ornare, est sed lacinia elementum, lectus diam tempor leo, sit amet elementum ex elit id ex. Ut ac viverra turpis. Quisque in nisl auctor, ornare dui ac, consequat tellus.</p>
-<h1 id="research-containing-a-figure"><span class="header-section-number">4</span> Research containing a figure</h1>
-<h2 id="introduction-2"><span class="header-section-number">4.1</span> Introduction</h2>
-<p>This is the introduction. Sed vulputate tortor at nisl blandit interdum. Cras sagittis massa ex, quis eleifend purus condimentum congue. Maecenas tristique, justo vitae efficitur mollis, mi nulla varius elit, in consequat ligula nulla ut augue. Phasellus diam sapien, placerat sit amet tempor non, lobortis tempus ante.</p>
-<h2 id="method-1"><span class="header-section-number">4.2</span> Method</h2>
-<p>Donec imperdiet, lectus vestibulum sagittis tempus, turpis dolor euismod justo, vel tempus neque libero sit amet tortor. Nam cursus commodo tincidunt.</p>
-<h3 id="subsection-1"><span class="header-section-number">4.2.1</span> Subsection 1</h3>
-<p>This is the first part of the methodology. Duis tempor sapien sed tellus ultrices blandit. Sed porta mauris tortor, eu vulputate arcu dapibus ac. Curabitur sodales at felis efficitur sollicitudin. Quisque at neque sollicitudin, mollis arcu vitae, faucibus tellus.</p>
-<h3 id="subsection-2-1"><span class="header-section-number">4.2.2</span> Subsection 2</h3>
-<p>This is the second part of the methodology. Sed ut ipsum ultrices, interdum ipsum vel, lobortis diam. Curabitur sit amet massa quis tortor molestie dapibus a at libero. Mauris mollis magna quis ante vulputate consequat. Integer leo turpis, suscipit ac venenatis pellentesque, efficitur non sem. Pellentesque eget vulputate turpis. Etiam id nibh at elit fermentum interdum.</p>
-<!-- 
-Comments can be added like this.
--->
-<h2 id="results-1"><span class="header-section-number">4.3</span> Results</h2>
-<p>These are the results. In vitae odio at libero elementum fermentum vel iaculis enim. Nullam finibus sapien in congue condimentum. Curabitur et ligula et ipsum mollis fringilla.</p>
-<h2 id="discussion-1"><span class="header-section-number">4.4</span> Discussion</h2>
-<p>Figure  shows how to add a figure. Donec ut lacinia nibh. Nam tincidunt augue et tristique cursus. Vestibulum sagittis odio nisl, a malesuada turpis blandit quis. Cras ultrices metus tempor laoreet sodales. Nam molestie ipsum ac imperdiet laoreet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-<!-- 
-Figures can be added with the following syntax:
-![my_caption \label{my_label}](source/figures/my_image.pdf){ width=50% }
-
-For details on setting attributes like width and height, see:
-http://pandoc.org/MANUAL.html#extension-link_attributes
--->
-<figure>
-<img src="source/figures/example_figure.png" alt="RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research. " style="width:100.0%" /><figcaption>RV Calypso is a former British Royal Navy minesweeper converted into a research vessel for the oceanographic researcher Jacques-Yves Cousteau. It was equipped with a mobile laboratory for underwater field research. </figcaption>
-</figure>
-<h2 id="conclusion-2"><span class="header-section-number">4.5</span> Conclusion</h2>
-<p>This is the conclusion to the chapter. Quisque nec purus a quam consectetur volutpat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In lorem justo, convallis quis lacinia eget, laoreet eu metus. Fusce blandit tellus tellus. Curabitur nec cursus odio. Quisque tristique eros nulla, vitae finibus lorem aliquam quis. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-<h1 id="research-containing-a-table"><span class="header-section-number">5</span> Research containing a table</h1>
-<h2 id="introduction-3"><span class="header-section-number">5.1</span> Introduction</h2>
-<p>This is the introduction. Phasellus non purus id mauris aliquam rutrum vitae quis tellus. Maecenas rhoncus ligula nulla, fringilla placerat mi consectetur eu. Aenean nec metus ac est ornare posuere. Nunc ipsum lacus, gravida commodo turpis quis, rutrum eleifend erat. Pellentesque id lorem eget ante porta tincidunt nec nec tellus.</p>
-<h2 id="method-2"><span class="header-section-number">5.2</span> Method</h2>
-<p>Vivamus consectetur, velit in congue lobortis, massa massa lacinia urna, sollicitudin semper ipsum augue quis tortor. Donec quis nisl at arcu volutpat ultrices. Maecenas ex nibh, consequat ac blandit sit amet, molestie in odio. Morbi finibus libero et nisl dignissim, at ultricies ligula pulvinar.</p>
-<h3 id="subsection-1-1"><span class="header-section-number">5.2.1</span> Subsection 1</h3>
-<p>This is the first part of the methodology. Integer leo erat, commodo in lacus vel, egestas varius elit. Nulla eget magna quam. Nullam sollicitudin dolor ut ipsum varius tincidunt. Duis dignissim massa in ipsum accumsan imperdiet. Maecenas suscipit sapien sed dui pharetra blandit. Morbi fermentum est vel quam pretium maximus.</p>
-<h3 id="subsection-2-2"><span class="header-section-number">5.2.2</span> Subsection 2</h3>
-<p>This is the second part of the methodology. Nullam accumsan condimentum eros eu volutpat. Maecenas quis ligula tempor, interdum ante sit amet, aliquet sem. Fusce tellus massa, blandit id tempus at, cursus in tortor. Nunc nec volutpat ante. Phasellus dignissim ut lectus quis porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-<!-- 
-Comments can be added like this.
--->
-<h2 id="results-2"><span class="header-section-number">5.3</span> Results</h2>
-<p>Table  shows us how to add a table. Integer tincidunt sed nisl eget pellentesque. Mauris eleifend, nisl non lobortis fringilla, sapien eros aliquet orci, vitae pretium massa neque eu turpis. Pellentesque tincidunt aliquet volutpat. Ut ornare dui id ex sodales laoreet.</p>
-<!-- Force the table onto a newpage -->
-
-<table style="width:88%;">
-<caption>This is the table caption. Suspendisse blandit dolor sed tellus venenatis, venenatis fringilla turpis pretium. </caption>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 33%" />
-<col style="width: 26%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Column 1</th>
-<th style="text-align: left;">Column 2</th>
-<th style="text-align: left;">Column 3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Row 1</td>
-<td style="text-align: left;">0.1</td>
-<td style="text-align: left;">0.2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Row 2</td>
-<td style="text-align: left;">0.3</td>
-<td style="text-align: left;">0.3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Row 3</td>
-<td style="text-align: left;">0.4</td>
-<td style="text-align: left;">0.4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Row 4</td>
-<td style="text-align: left;">0.5</td>
-<td style="text-align: left;">0.6</td>
-</tr>
-</tbody>
-</table>
-<h2 id="discussion-2"><span class="header-section-number">5.4</span> Discussion</h2>
-<p>This is the discussion. Etiam sit amet mi eros. Donec vel nisi sed purus gravida fermentum at quis odio. Vestibulum quis nisl sit amet justo maximus molestie. Maecenas vitae arcu erat. Nulla facilisi. Nam pretium mauris eu enim porttitor, a mattis velit dictum. Nulla sit amet ligula non mauris volutpat fermentum quis vitae sapien.</p>
-<h2 id="conclusion-3"><span class="header-section-number">5.5</span> Conclusion</h2>
-<p>This is the conclusion to the chapter. Nullam porta tortor id vehicula interdum. Quisque pharetra, neque ut accumsan suscipit, orci orci commodo tortor, ac finibus est turpis eget justo. Cras sodales nibh nec mauris laoreet iaculis. Morbi volutpat orci felis, id condimentum nulla suscipit eu. Fusce in turpis quis ligula tempus scelerisque eget quis odio. Vestibulum et dolor id erat lobortis ullamcorper quis at sem.</p>
-<h1 id="final-research-study"><span class="header-section-number">6</span> Final research study</h1>
-<h2 id="introduction-4"><span class="header-section-number">6.1</span> Introduction</h2>
-<p>This is the introduction. Nunc lorem odio, laoreet eu turpis at, condimentum sagittis diam. Phasellus metus ligula, auctor ac nunc vel, molestie mattis libero. Praesent id posuere ex, vel efficitur nibh. Quisque vestibulum accumsan lacus vitae mattis.</p>
-<h2 id="method-3"><span class="header-section-number">6.2</span> Method</h2>
-<p>In tincidunt viverra dolor, ac pharetra tellus faucibus eget. Pellentesque tempor a enim nec venenatis. Morbi blandit magna imperdiet posuere auctor. Maecenas in maximus est.</p>
-<h3 id="subsection-1-2"><span class="header-section-number">6.2.1</span> Subsection 1</h3>
-<p>This is the first part of the methodology. Praesent mollis sem diam, sit amet tristique lacus vulputate quis. Vivamus rhoncus est rhoncus tellus lacinia, a interdum sem egestas. Curabitur quis urna vel quam blandit semper vitae a leo. Nam vel lectus lectus.</p>
-<h3 id="subsection-2-3"><span class="header-section-number">6.2.2</span> Subsection 2</h3>
-<p>This is the second part of the methodology. Aenean vel pretium tortor. Aliquam erat volutpat. Quisque quis lobortis mi. Nulla turpis leo, ultrices nec nulla non, ullamcorper laoreet risus.</p>
-<!-- 
-Comments can be added like this.
--->
-<h2 id="results-3"><span class="header-section-number">6.3</span> Results</h2>
-<p>These are the results. Curabitur vulputate nisl non ante tincidunt tempor. Aenean porta nisi quam, sed ornare urna congue sed. Curabitur in sapien justo. Quisque pulvinar ullamcorper metus, eu varius mauris pellentesque et. In hac habitasse platea dictumst. Pellentesque nec porttitor libero. Duis et magna a massa lacinia cursus.</p>
-<h2 id="discussion-3"><span class="header-section-number">6.4</span> Discussion</h2>
-<p>This is the discussion. Curabitur gravida nisl id gravida congue. Duis est nisi, sagittis eget accumsan ullamcorper, semper quis turpis. Mauris ultricies diam metus, sollicitudin ultricies turpis lobortis vitae. Ut egestas vehicula enim, porta molestie neque consectetur placerat. Integer iaculis sapien dolor, non porta nibh condimentum ut.</p>
-<h2 id="conclusion-4"><span class="header-section-number">6.5</span> Conclusion</h2>
-<p>This is the conclusion to the chapter. Nulla sed condimentum lectus. Duis sed tempor erat, at cursus lacus. Nam vitae tempus arcu, id vestibulum sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-<h1 id="conclusion-5"><span class="header-section-number">7</span> Conclusion</h1>
-<!-- 
-A chapter that concludes the thesis by summarising the learning points
-and outlining future areas for research
--->
-<h2 id="thesis-summary"><span class="header-section-number">7.1</span> Thesis summary</h2>
-<p>In summary, pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc eleifend, ex a luctus porttitor, felis ex suscipit tellus, ut sollicitudin sapien purus in libero. Nulla blandit eget urna vel tempus. Praesent fringilla dui sapien, sit amet egestas leo sollicitudin at.</p>
-<h2 id="future-work"><span class="header-section-number">7.2</span> Future work</h2>
-<p>There are several potential directions for extending this thesis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam gravida ipsum at tempor tincidunt. Aliquam ligula nisl, blandit et dui eu, eleifend tempus nibh. Nullam eleifend sapien eget ante hendrerit commodo. Pellentesque pharetra erat sit amet dapibus scelerisque.</p>
-<p>Vestibulum suscipit tellus risus, faucibus vulputate orci lobortis eget. Nunc varius sem nisi. Nunc tempor magna sapien, euismod blandit elit pharetra sed. In dapibus magna convallis lectus sodales, a consequat sem euismod. Curabitur in interdum purus. Integer ultrices laoreet aliquet. Nulla vel dapibus urna. Nunc efficitur erat ac nisi auctor sodales.</p>
-<h1 id="appendix-1-some-extra-stuff" class="unnumbered">Appendix 1: Some extra stuff</h1>
-<!-- 
-This could be a list of papers by the author for example 
--->
-<p>Add appendix 1 here. Vivamus hendrerit rhoncus interdum. Sed ullamcorper et augue at porta. Suspendisse facilisis imperdiet urna, eu pellentesque purus suscipit in. Integer dignissim mattis ex aliquam blandit. Curabitur lobortis quam varius turpis ultrices egestas.</p>
-<h1 id="appendix-2-some-more-extra-stuff" class="unnumbered">Appendix 2: Some more extra stuff</h1>
-<!-- 
-This could include extra figures or raw data
--->
-<p>Add appendix 2 here. Aliquam rhoncus mauris ac neque imperdiet, in mattis eros aliquam. Etiam sed massa et risus posuere rutrum vel et mauris. Integer id mauris sed arcu venenatis finibus. Etiam nec hendrerit purus, sed cursus nunc. Pellentesque ac luctus magna. Aenean non posuere enim, nec hendrerit lacus. Etiam lacinia facilisis tempor. Aenean dictum nunc id felis rhoncus aliquam.</p>
-
-<!-- 
-Do not edit this page.
-
-References are automatically generated from the BibTex file (References.bib)
-
-...which you should create using your reference manager.
--->
-<h1 id="references" class="unnumbered">References</h1>
-<div id="refs" class="references">
-<div id="ref-Cousteau1963">
-<p>Cousteau Jacques &amp; Dugan James, 1963. <em>The Living Sea: by Jacques-Yves Cousteau</em>, London: Hamish Hamilton.</p>
-</div>
-</div>
+                                ...which you should create using your reference manager.
+                                -->
+                                <h1 data-number="8" id="references"><span class="header-section-number">8</span> References</h1>
             </body>
 </html>
-
